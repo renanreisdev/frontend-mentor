@@ -10,129 +10,138 @@
 
 html, body {
     height: 100vh;
-    overflow: hidden;
-}
-
-.everything {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
     background: hsl(185, 75%, 39%);
 }
 
-.background-top {
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 150%;
-    height: 100vh;
-
-    background-image: url("../images/bg-pattern-top.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.background-bottom {
-    position: absolute;
-    bottom: -50%;
-    right: -50%;
-
-    width: 150%;
-    height: 100vh;
-
-    background-image: url("../images/bg-pattern-bottom.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+    margin: 0 auto;
     width: 100%;
+    min-width: 330px;
+    max-width: 1440px;
     height: 100vh;
 }
 
-.profile-wriper {
-    width: 350px;
-    height: 400px;
+.bg-pattern-top, .bg-pattern-bottom {
+    position: absolute;
 
-    background: white;
-    border-radius: 15px;
+    width: 100%;
+    min-width: 150px;
+    max-width: 50%;
+    height: 100%;
+    max-height: 50vh;
 
-    z-index: 99;
+    background-image: url("../images/bg-pattern-top.svg"),
+    url("../images/bg-pattern-bottom.svg");
+    background-size: 125%;
+    background-repeat: no-repeat;
 }
 
-.profile-top {
-    width: 100%;
-    height: 40%;
+.bg-pattern-top {
+    top: 0;
+    left: 0;
 
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+}
+
+.bg-pattern-bottom {
+    bottom: 0;
+    right: 0;
+}
+
+section.pattern-card {
+    position: relative;
+    top: calc(50% - 200px);
+
+    margin: 0 auto;
+    width: 330px;
+    height: 360px;
+
+    background-color: white;
     background-image: url("../images/bg-pattern-card.svg");
-    border-radius: 15px 15px 0 0;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center top;
+    border-radius: 15px;
 }
 
 .profile-image {
-    margin: -60px auto;
+    position: relative;
+    top: calc(50% - 120px);
+
+    margin: 0 auto;
     width: 120px;
     height: 120px;
 
     background-image: url("../images/image-victor.jpg");
     background-size: contain;
-    background-position: center;
-    border: 5px solid white;
+    border: 3px solid white;
     border-radius: 60px;
 }
 
-.profile-bottom {
+.profile-data {
+    position: relative;
+    top: 70px;
+
+    padding: 15px;
     width: 100%;
-    height: 60%;
+    height: 60px;
 
     text-align: center;
 }
 
-.profile-bottom > p {
-    margin-top: 75px;
-
-    font-weight: 700;
+.profile-data h2 span {
+    color: hsl(0, 0%, 59%);
 }
 
-.profile-bottom > p > span,
-.profile-bottom > span {
+.profile-data p {
+    margin-top: 10px;
+
     color: hsl(0, 0%, 59%);
 
-    font-weight: 400;
+    font-size: 16px;
 }
 
-.profile-bottom > span {
-    display: inline-block;
-    margin-top: 20px;
-    
+hr {
+    position: relative;
+    top: 95px;
+
+    border-color: rgba(200, 200, 200, 0.1);
 }
 
-.profile-bottom hr {
-    margin-top: 25px;
-    border-color: rgba(180, 180, 180, 0.1);
-}
+.profile-informations {
+    position: absolute;
+    bottom: 0;
 
-footer {
-    float: left;
-
-    padding: 0 5%;
     width: 100%;
+    height: 100px;
+
+    text-align: center;
 }
 
-footer h2 {
-    margin-top: 20px;
-    width: 33.3%;
-    float: left;
+.profile-informations h2, .profile-informations p {
+    position: relative;
+    top: 40px;
+    display: inline-block;
+
+    width: 30%;
 }
 
-footer p {
-    margin-top: 10px;
-    width: 33.3%;
-    float: left;
-    color: rgb(180, 180, 180);
+.profile-informations p {
+    color:hsl(0, 0%, 59%);
+
+    font-size: 14px;
+}
+
+@media screen and (max-width: 800px) {
+    .bg-pattern-top, .bg-pattern-bottom {
+        background-size: 200%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .bg-pattern-top, .bg-pattern-bottom {
+        background-size: 300%;
+    }
 }

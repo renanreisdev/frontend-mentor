@@ -1,1 +1,1 @@
-Repositório dos desfios do site Frontendmentor.io
+Repositório dos desafios do site Frontendmentor.io
